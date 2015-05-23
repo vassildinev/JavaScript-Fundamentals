@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+	Write an expression that checks for given integer if its third digit (right-to-left) is 7. E. g. 1732 -> true.
+-->
+<html>
+	<head>
+		<title>Third digit</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-check-digit" onclick="onCheckDigitBtnClick()">Check if 3rd digit right to left is 7</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckDigitBtnClick() {
+				var number = jsConsole.readInteger('#tb-number'),
+					digitIndex = 3,
+					digit = parseInt((number % Math.pow(10, digitIndex)) / Math.pow(10, digitIndex - 1)),
+					digitIsSeven = digit === 7;
+
+				jsConsole.writeLine(digitIsSeven);
+			}
+		</script>
+	</body>
+</html>

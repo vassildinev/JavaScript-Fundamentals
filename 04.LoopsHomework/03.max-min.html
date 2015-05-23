@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	Write a script that finds the max and min number from a sequence of numbers
+-->
+<html>
+	<head>
+		<title>Max and min form a sequence</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<label for="tb-text">Sequence (separator - ','): </label>
+		<input type="text" id="tb-text" />
+		<a href="#" id="btn-read-sequence-numbers" onclick="onReadSequenceBtnClick()">Find min and max</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onReadSequenceBtnClick() {
+				var sequence = jsConsole.read('#tb-text');
+					numbers = sequence.split(','),
+					min = parseInt(numbers[0]),
+					max = parseInt(numbers[0]);
+
+				for (var i = 0; i <= numbers.length; i++) {
+					var currentNum = numbers[i];
+					if (parseInt(currentNum) < min) {
+						min = currentNum;
+					}
+
+					if(parseInt(currentNum) > max) {
+						max = currentNum;
+					}
+				};
+
+				jsConsole.writeLine(min);
+				jsConsole.writeLine(max);
+			}
+		</script>
+	</body>
+</html>

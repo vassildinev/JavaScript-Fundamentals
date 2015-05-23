@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+	Write a script that finds the biggest of three integers using nested if statements.
+-->
+<html>
+	<head>
+		<title>Biggest of three</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<input type="text" id="tb-number-a" /><br/>
+		<input type="text" id="tb-number-b" /><br/>
+		<input type="text" id="tb-number-c" />
+		<a href="#" id="btn-find-biggest" onclick="onFindBiggestBtnClick()">Find biggest</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onFindBiggestBtnClick() {
+				var firstNumber = jsConsole.readFloat('#tb-number-a'),
+						secondNumber = jsConsole.readFloat('#tb-number-b'),
+						thirdNumber = jsConsole.readFloat('#tb-number-c');
+	        	if (firstNumber > secondNumber) {
+		            if (secondNumber > thirdNumber) {
+		                jsConsole.writeLine(firstNumber);
+		            } else {
+		                if (firstNumber > thirdNumber) {
+		                    jsConsole.writeLine(firstNumber);
+		                } else {
+		                    jsConsole.writeLine(thirdNumber);
+		                }
+		            }
+		        } else {
+		            if (secondNumber < thirdNumber) {
+		                jsConsole.writeLine(thirdNumber);
+		            } else {
+		                jsConsole.writeLine(secondNumber);
+		            }
+		        }
+		    }
+		</script>
+	</body>
+</html>

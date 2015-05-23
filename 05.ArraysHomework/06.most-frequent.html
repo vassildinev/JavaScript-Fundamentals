@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+    Write a script that finds the most frequent number in an array.
+-->
+<html>
+    <head>
+        <title>Most frequent</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label>Please input an array with elements, separated by comma only.</label><br/>
+        <input type="text" id="tb-arr" /><br/>
+        <a href="#" id="btn-find" onclick="onFindClick()">Find most frequent</a>
+        <div id="js-console"></div>              
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function onFindClick() {
+                
+                //INPUT
+                var numbers = jsConsole.read('#tb-arr').split(',');
+                for (var i = 0; i < numbers.length; i++) {
+                    numbers[i]=parseInt(numbers[i]);
+                };
+
+                //SOLUTION
+                var currentCount = 1,
+                    bestCount = 0,
+                    bestCountElement = numbers[0],
+                    k = 0;
+
+                //for each element with index k in the array counts how many times it is found
+                //if there are more than 1 best counts,
+                //the first to appear in the array will be considered
+                debugger;
+                while (k < numbers.length) {
+                    for (var i = 0; i < numbers.length; i++) {
+                        if (k !== i) {
+                            if (numbers[k] === numbers[i]) {
+                                currentCount++;
+                            }
+                        }
+                    }
+
+                    if (currentCount > bestCount) {
+                        bestCount = currentCount;
+                        bestCountElement = numbers[k];
+                    }
+
+                    currentCount = 1;
+                    k++;
+                }
+
+                //OUTPUT
+                jsConsole.writeLine(bestCountElement + " : " + bestCount + " time(s)");
+            }
+        </script>
+    </body>
+</html>

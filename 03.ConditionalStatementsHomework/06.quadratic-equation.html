@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+	Write a script that enters the coefficients a, b and c of a quadratic equation
+		a*x2 + b*x + c = 0
+	and calculates and prints its real roots. 
+	Note that quadratic equations may have 0, 1 or 2 real roots.
+-->
+<html>
+	<head>
+		<title>Quadratic equation</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<label for="tb-number-quad">a = </label>
+		<input type="text" id="tb-number-quad" /><br/>
+		<label for="tb-number-lin">b = </label>
+		<input type="text" id="tb-number-lin" /><br/>
+		<label for="tb-number-free">c = </label>
+		<input type="text" id="tb-number-free" />
+		<a href="#" id="btn-solve-equation" onclick="onSolveEquationBtnClick()">Solve</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onSolveEquationBtnClick() {
+		        var quadraticCoefficient = jsConsole.readFloat('#tb-number-quad'),
+		        	linearCoefficient = jsConsole.readFloat('#tb-number-lin'),
+		        	freeTerm = jsConsole.readFloat('#tb-number-free'),
+		        	discriminant = linearCoefficient * linearCoefficient - 4 * quadraticCoefficient * freeTerm;
+		        if (discriminant < 0) {
+		        	jsConsole.writeLine('no real roots');
+		        } else if (discriminant == 0) {
+		        	jsConsole.writeLine('x1 = x2 = ' + -0.5 * linearCoefficient / quadraticCoefficient);
+		        } else {
+		        	jsConsole.writeLine('x1 = ' + 0.5 * (-linearCoefficient - Math.sqrt(discriminant)) / quadraticCoefficient);
+	            	jsConsole.writeLine('x2 = ' + 0.5 * (-linearCoefficient + Math.sqrt(discriminant)) / quadraticCoefficient);
+		        }
+		    }
+		</script>
+	</body>
+</html>

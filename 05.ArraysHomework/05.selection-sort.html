@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    Write a script to sort an array using the selection sort algorithm.
+-->
+<html>
+    <head>
+        <title>Array sort</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label>Please input an array with elements, separated by comma only.</label><br/>
+        <input type="text" id="tb-arr" /><br/>
+        <a href="#" id="btn-sort" onclick="onSortClick()">Sort</a>
+        <div id="js-console"></div>              
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function onSortClick() {
+                
+                //INPUT
+                var input = jsConsole.read('#tb-arr').split(',');
+                for (var i = 0; i < input.length; i++) {
+                    input[i]=parseInt(input[i]);
+                };
+                var i, j, iMin;
+
+                //SOLUTION
+                for (j = 0; j < input.length-1; j++) {
+                    iMin = j;
+                    for (i = j+1; i < input.length; i++) {  
+                        if (input[i] < input[iMin]) {
+                            iMin = i;
+                        }
+                    }
+                 
+                    if(iMin != j) {
+                        input[j]+=input[iMin];
+                        input[iMin]=input[j] - input[iMin];
+                        input[j]-=input[iMin];
+                    }
+                 
+                }
+
+                for (i = 0; i < input.length; i++) {
+                    jsConsole.writeLine(input[i]);
+                };
+            }
+        </script>
+    </body>
+</html>

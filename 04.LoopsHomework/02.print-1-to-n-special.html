@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+	Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time
+-->
+<html>
+	<head>
+		<title>Print 1 to N special</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<label for="tb-number">N: </label>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-print-special-numbers" onclick="onPrintSpecialNumbersBtnClick()">Print 1 to N special</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onPrintSpecialNumbersBtnClick() {
+				var value = jsConsole.readInteger('#tb-number');
+				for (var i = 1; i <= value; i++) {
+					if(!(i % 3 === 0 && i % 7 === 0)) {
+						jsConsole.writeLine(i);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

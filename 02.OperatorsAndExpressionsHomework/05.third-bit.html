@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	Write a boolean expression for finding if the bit 3 (counting from 0) of a given integer is 1 or 0.
+-->
+<html>
+	<head>
+		<title>Third bit</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-check-bit" onclick="onCheckBitBtnClick()">Check 3rd bit</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckBitBtnClick() {
+				var number = jsConsole.readInteger('#tb-number');
+					bitIndex = 3,
+					bit = (number >> bitIndex);
+
+				jsConsole.writeLine(bit);
+			}
+		</script>
+	</body>
+</html>

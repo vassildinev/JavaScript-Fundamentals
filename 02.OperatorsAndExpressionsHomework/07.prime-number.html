@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+	Write an expression that checks if given positive integer number n (n ≤ 100) is prime. E.g. 37 is prime.
+-->
+<html>
+	<head>
+		<title>Prime number</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-check-prime" onclick="onCheckPrimeBtnClick()">Check if prime</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckPrimeBtnClick () {
+				var number = jsConsole.readInteger('#tb-number'),
+					isPrime = true;
+
+				for (var i = 2; i < number; i++) {
+					if (number % i === 0) { 
+						isPrime = false; 
+					}
+				}
+
+				if (number <= 1) {
+					jsConsole.writeLine(!isPrime);
+				} else {
+					jsConsole.writeLine(isPrime);
+				}
+			}
+		</script>
+	</body>
+</html>

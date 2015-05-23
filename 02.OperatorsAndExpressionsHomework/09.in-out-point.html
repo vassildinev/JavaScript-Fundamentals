@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+	Write an expression that checks for given point (x, y) if it is within the circle K( (1,1), 3) and out of the rectangle R(top=1, left=-1, width=6, height=2).
+-->
+<html>
+	<head>
+		<title>Point in/out</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<label for="tb-number-x">Point X coord: </label>
+		<input type="text" id="tb-number-x" /><br/>
+		<label for="tb-number-y">Point Y coord: </label>
+		<input type="text" id="tb-number-y" />
+		<a href="#" id="btn-check-if-inside-circle-outside-rectangle" onclick="onCheckInsideCircleOutsideRectangleBtnClick()">Check if inside circle and outside rectangle</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckInsideCircleOutsideRectangleBtnClick() {
+				var randomPoint = {x: jsConsole.readFloat('#tb-number-x'), y: jsConsole.readFloat('#tb-number-y')},
+					circle = {xCoord: 1, yCoord: 1, radius: 3},
+					rect = {topCoord: 1, leftCoord: -1, width: 6, height: 2},
+					isOutsideRectangle = !(rect.leftCoord <= randomPoint.x && randomPoint.y <= rect.topCoord + rect.width && rect.topCoord - rect.height <= randomPoint.y && randomPoint.y <= rect.topCoord),
+					isInsideCircle = Math.pow(randomPoint.x - circle.xCoord, 2) + Math.pow(randomPoint.y - circle.yCoord, 2) <= circle.radius * circle.radius;
+
+				jsConsole.writeLine(isInsideCircle && isOutsideRectangle);
+			}			
+		</script>
+	</body>
+</html>

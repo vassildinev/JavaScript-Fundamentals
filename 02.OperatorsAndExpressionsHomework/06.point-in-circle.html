@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+	Write an expression that checks if given point (x,  y) is within a circle C(O, 5).
+-->
+<html>
+	<head>
+		<title>Point in circle</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<label for="tb-number-x">Point X coord: </label>
+		<input type="text" id="tb-number-x" /><br/>
+		<label for="tb-number-y">Point Y coord: </label>
+		<input type="text" id="tb-number-y" />
+		<a href="#" id="btn-check-if-inside-circle" onclick="onCheckInsideCircleBtnClick()">Check if inside circle C(O, 5)</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckInsideCircleBtnClick() {
+				var randomPoint = {x: jsConsole.readFloat('#tb-number-x'), y: jsConsole.readFloat('#tb-number-y')},
+					radius = 5;
+					isInsideCircle = (randomPoint.x * randomPoint.x + randomPoint.y * randomPoint.y) <= radius * radius;
+
+				jsConsole.writeLine(isInsideCircle);
+			}
+		</script>
+	</body>
+</html>

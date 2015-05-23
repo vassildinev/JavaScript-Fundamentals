@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<!--
+	1. Assign all the possible JavaScript literals to different variables.
+	2. Create a string variable with quoted text in it. For example: 'How you doin'?', Joey said.
+	3. Try typeof on all variables you created.
+	4. Create null, undefined variables and try typeof on them.
+-->
+<html>
+	<head>
+		<title>Data types and variables</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			// Primary (primitive) data types
+			var stringExample = 'JavaScript is cool!',
+				numberExample = 42,
+				booleanExample = true;
+
+			// Composite (reference) types
+			var objectExample = {firstName:'John', lastName:'Doe'},
+				arrayExample = ['Saab', 'Volvo', 'BMW'];
+
+			// Special types.
+			var undefinedExample,
+				nullExample = null;
+
+			// Quoted text string
+			var quotedTextString = "'How you doin'?', Joey said.";
+
+			// Typeof test
+			jsConsole.writeLine(typeof(stringExample));
+			jsConsole.writeLine(typeof(numberExample));
+			jsConsole.writeLine(typeof(booleanExample));
+			jsConsole.writeLine(typeof(objectExample));
+			jsConsole.writeLine(typeof(arrayExample)); 	// returns object, since array in JS
+														// array is a special type of object
+			jsConsole.writeLine(typeof(quotedTextString));
+
+			jsConsole.writeLine(typeof(undefinedExample));
+			jsConsole.writeLine(typeof(nullExample));
+		</script>
+	</body>
+</html>

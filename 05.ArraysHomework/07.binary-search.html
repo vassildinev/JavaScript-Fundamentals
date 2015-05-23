@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+    Write a script that finds the index of given element in a sorted array of integers by using the binary search algorithm.
+-->
+<html>
+    <head>
+        <title>Binary search</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label>Please input a sorted array of integers, separated by comma only.</label><br/>
+        <input type="text" id="tb-arr" /><br/>
+        <label>Value to search</label><br/>
+        <input type="text" id="tb-val" /><br/>
+        <a href="#" id="btn-find" onclick="onFindClick()">Engage binary search</a>
+        <div id="js-console"></div>              
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function onFindClick() {
+                
+                //INPUT
+                var numbers = jsConsole.read('#tb-arr').split(','),
+                    value = jsConsole.readInteger('#tb-val'),
+                    imin = 0,
+                    imax = numbers.length,
+                    exists = false;
+
+                for (var i = 0; i < numbers.length; i++) {
+                    numbers[i] = parseInt(numbers[i]);
+                };
+
+                //SOLUTION
+                while(imax >= imin) {
+                    var imid = parseInt((imin + imax) / 2);
+                    if (numbers[imid] === value) {
+                        jsConsole.writeLine("KEY FOUND AT ARR[" + imid + "] = " + numbers[imid]);
+
+                        exists = true;
+                        break;
+                    }
+
+                    else if(numbers[imid] < value) {
+                        imin = imid + 1;
+                    }
+
+                    else {
+                        imax = imid - 1;
+                    }
+                }
+
+                if(!exists) {
+                    jsConsole.writeLine("KEY NOT FOUND");
+                }
+            }
+        </script>
+    </body>
+</html>

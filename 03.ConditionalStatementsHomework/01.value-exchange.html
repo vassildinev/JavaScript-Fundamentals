@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+	Write an if statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
+-->
+<html>
+	<head>
+		<title>Value exchange</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<label for="tb-number-n">First value: </label>
+		<input type="text" id="tb-number-n" /><br/>
+		<label for="tb-number-m">Second value: </label>
+		<input type="text" id="tb-number-m" />
+		<a href="#" id="btn-exchange-values" onclick="onExchangeValuesBtnClick()">Exchange</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onExchangeValuesBtnClick() {
+				var firstValue = jsConsole.readFloat('#tb-number-n'),
+					secondValue = jsConsole.readFloat('#tb-number-m');
+
+				jsConsole.writeLine('First value = ' + firstValue);
+				jsConsole.writeLine('Second value = ' + secondValue);
+
+				if (firstValue > secondValue) {
+					firstValue += secondValue;
+					secondValue = firstValue - secondValue;
+					firstValue -= secondValue;
+				}
+
+				jsConsole.writeLine('');
+				jsConsole.writeLine('First value = ' + firstValue);
+				jsConsole.writeLine('Second value = ' + secondValue);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+	Write a script that finds the greatest of given 5 variables.
+-->
+<html>
+	<head>
+		<title>Biggest of five</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<input type="text" id="tb-number-a" /><br/>
+		<input type="text" id="tb-number-b" /><br/>
+		<input type="text" id="tb-number-c" /><br/>
+		<input type="text" id="tb-number-m" /><br/>
+		<input type="text" id="tb-number-n" />
+		<a href="#" id="btn-find-greatest" onclick="onFindGreatestBtnClick()">Find greatest</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onFindGreatestBtnClick() {
+		        var firstNumber = jsConsole.readInteger('#tb-number-a'),
+		        	secondNumber = jsConsole.readInteger('#tb-number-b'),
+		        	thirdNumber = jsConsole.readInteger('#tb-number-c'),
+		        	fourthNumber = jsConsole.readInteger('#tb-number-m'),
+		        	fifthNumber = jsConsole.readInteger('#tb-number-n');
+
+		        if (Math.max(firstNumber, secondNumber) > Math.max(thirdNumber, fourthNumber)) {
+		            if (Math.max(thirdNumber, fourthNumber) > fifthNumber) {
+		                jsConsole.writeLine(Math.max(firstNumber, secondNumber));
+		            } else {
+		                if (Math.max(firstNumber, secondNumber) > fifthNumber) {
+		                    jsConsole.writeLine(Math.max(firstNumber, secondNumber));
+		                } else {
+		                    jsConsole.writeLine(fifthNumber);
+		                }
+		            }
+		        } else {
+		            if (Math.max(thirdNumber, fourthNumber) < fifthNumber) {
+		                jsConsole.writeLine(fifthNumber);
+		            } else {
+		                jsConsole.writeLine(Math.max(thirdNumber, fourthNumber));
+		            }
+		        }
+		    }
+		</script>
+	</body>
+</html>

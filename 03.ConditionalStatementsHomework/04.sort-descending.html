@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+	Sort 3 real values in descending order using nested if statements.
+-->
+<html>
+	<head>
+		<title>Sort descending</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<input type="text" id="tb-number-a" /><br/>
+		<input type="text" id="tb-number-b" /><br/>
+		<input type="text" id="tb-number-c" />
+		<a href="#" id="btn-order" onclick="onOrderBtnClick()">Order values</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onOrderBtnClick() {
+				var firstNumber = jsConsole.readFloat('#tb-number-a'),
+					secondNumber = jsConsole.readFloat('#tb-number-b'),
+					thirdNumber = jsConsole.readFloat('#tb-number-c'),
+		        	temporary;
+				if (firstNumber >= secondNumber) {
+		            if (secondNumber >= thirdNumber) { } else {
+		                if (firstNumber >= thirdNumber) {
+		                    temporary = secondNumber;
+		                    secondNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                } else {
+		                    temporary = firstNumber;
+		                    firstNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                }
+		                if (secondNumber <= thirdNumber) {
+		                    temporary = secondNumber;
+		                    secondNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                }
+		            }
+		        } else {
+		            temporary = firstNumber;
+		            firstNumber = secondNumber;
+		            secondNumber = temporary;
+		            if (secondNumber >= thirdNumber) { }
+		            else
+		            {
+		                if (firstNumber >= thirdNumber) {
+		                    temporary = secondNumber;
+		                    secondNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                } else {
+		                    temporary = firstNumber;
+		                    firstNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                } 
+		                if (secondNumber <= thirdNumber) {
+		                    temporary = secondNumber;
+		                    secondNumber = thirdNumber;
+		                    thirdNumber = temporary;
+		                }
+		            }
+		        }
+
+		        jsConsole.writeLine(firstNumber);
+		        jsConsole.writeLine(secondNumber);
+		        jsConsole.writeLine(thirdNumber);
+		    }
+		</script>
+	</body>
+</html>

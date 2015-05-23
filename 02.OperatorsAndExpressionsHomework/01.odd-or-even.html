@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+	Write an expression that checks if given integer is odd or even.
+-->
+<html>
+	<head>
+		<title>Odd or even</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-check-odd" onclick="onCheckOddBtnClick()">Check if even</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckOddBtnClick(){
+
+				var number = jsConsole.readInteger('#tb-number'),
+				isOdd = (number % 2 === 0) ? true : false;
+				jsConsole.writeLine(isOdd);
+			}
+		</script>
+	</body>
+</html>

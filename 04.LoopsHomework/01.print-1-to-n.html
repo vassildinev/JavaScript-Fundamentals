@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+	Write a script that prints all the numbers from 1 to N
+-->
+<html>
+	<head>
+		<title>Print 1 to N</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<label for="tb-number">N: </label>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-print-numbers" onclick="onPrintNumbersBtnClick()">Print 1 to N</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onPrintNumbersBtnClick() {
+				var value = jsConsole.readInteger('#tb-number');
+				for (var i = 1; i <= value; i++) {
+					jsConsole.writeLine(i);
+				}
+			}
+		</script>
+	</body>
+</html>

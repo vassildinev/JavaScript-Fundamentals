@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+	 Write script that asks for a digit and depending on the input shows the name of that digit (in English) using a switch statement.
+-->
+<html>
+	<head>
+		<title>English digit</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="text" id="tb-digit" />
+		<a href="#" id="btn-translate-digit" onclick="onTranslateDigitBtnClick()">Say in English</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onTranslateDigitBtnClick() {
+		        var digit = jsConsole.readInteger('#tb-digit');
+
+		        switch(digit){
+		        	case 0:
+		        		jsConsole.writeLine('zero');
+		        		break;
+		        	case 1:
+		        		jsConsole.writeLine('one');
+		        		break;
+		        	case 2:
+		        		jsConsole.writeLine('two');
+		        		break;
+		        	case 3:
+		        		jsConsole.writeLine('three');
+		        		break;
+		        	case 4:
+		        		jsConsole.writeLine('four');
+		        		break;
+		        	case 5:
+		        		jsConsole.writeLine('five');
+		        		break;
+		        	case 6:
+		        		jsConsole.writeLine('six');
+		        		break;
+		        	case 7:
+		        		jsConsole.writeLine('seven');
+		        		break;
+		        	case 8:
+		        		jsConsole.writeLine('eight');
+		        		break;
+		        	case 9:
+		        		jsConsole.writeLine('nine');
+		        		break;
+		        	default:
+		        		jsConsole.writeLine('invalid digit (digits are between 0 and 9 includive)');
+		        		break;
+		        }
+		    }
+	   	</script>
+	</body>
+</html>

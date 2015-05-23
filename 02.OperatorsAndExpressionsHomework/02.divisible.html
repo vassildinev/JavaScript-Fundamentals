@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+	Write a boolean expression that checks for given integer if it can be divided (without remainder) by 7 and 5 in the same time.
+-->
+<html>
+	<head>
+		<title>Divisible</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<input type="text" id="tb-number" />
+		<a href="#" id="btn-check-divisibility" onclick="onCheckDivisibilityBtnClick()">Check if divisible by 5 and 7</a>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			function onCheckDivisibilityBtnClick() {
+				var number = jsConsole.readInteger('#tb-number'),
+					isDivisible = (number % 7 === 0 && number % 5 === 0) ? true : false;
+
+				jsConsole.writeLine(isDivisible);
+			}
+		</script>
+	</body>
+</html>

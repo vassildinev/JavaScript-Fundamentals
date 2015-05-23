@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+	Write a script that finds the lexicographically smallest and largest property in document, window and navigator objects
+-->
+<html>
+	<head>
+		<title>Max and min form a sequence</title>
+		<link href="styles/js-console.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="js-console"></div>				 
+		<script src="scripts/js-console.js"></script>
+		<script>
+			var documentElements = document.getElementsByTagName('*');
+	        var min = documentElements[0];
+	        var max = documentElements[0];
+
+	        for (var i = 0; i < documentElements.length; i++) {
+	        	var currentElement = documentElements[i];
+
+	        	if (min > currentElement) {
+                	min = currentElement;
+	        	}
+
+	        	if (max < currentElement) {
+                	max = currentElement;
+	        	}
+	        }
+
+	        for (var property in window) {
+	        	if (min > property) {
+                	min = property;
+	        	}
+
+	        	if (max < property) {
+                	max = property;
+	        	}
+	        }
+
+	        for (var property in navigator) {
+	        	if (min > property) {
+                	min = property;
+	        	}
+
+	        	if (max < property) {
+                	max = property;
+	        	}
+	        }
+
+	        jsConsole.writeLine(min);
+	        jsConsole.writeLine(max);
+		</script>
+	</body>
+</html>

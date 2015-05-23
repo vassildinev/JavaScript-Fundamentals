@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+    Write a script that finds the maximal increasing sequence in an array
+-->
+<html>
+    <head>
+        <title>Array comparison</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label>Please input an array with elements, separated by comma only.</label><br/>
+        <input type="text" id="tb-arr" /><br/>
+        <a href="#" id="btn-find-max-increasing-sequence" onclick="onFindMaxIncreasingSequenceBtnClick()">Find max increasing sequence</a>
+        <div id="js-console"></div>              
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function onFindMaxIncreasingSequenceBtnClick() {
+                
+                //INPUT
+                var input = jsConsole.read('#tb-arr').split(',');
+
+                //SOLUTION
+
+                var bestResult = '',
+                    result = '',
+                    bestLen = 0,
+                    len = 1;
+
+                for (var i = 1; i < input.length; i++)
+                {
+                    var lastNumber = parseInt(input[i - 1]),
+                        currentNumber = parseInt(input[i]);
+
+                    //if the current number is the same, continue counting
+                    if (currentNumber > lastNumber) {
+                        len++;
+                        result += lastNumber;
+                        result += ' ';
+
+                        if (i == input.Length - 1) {
+                            if (len > bestLen) {
+                                result += currentNumber;
+                                bestResult = result;
+                            }
+                        }
+                    }
+
+                    //if not, start a new sequence
+                    //if there are several equal sequences in length
+                    //the first sequence found will be printed afterwards
+                    else {
+                        result += lastNumber;
+                        if (len > bestLen) {
+                            bestLen = len;
+                            bestResult = result;
+                        }
+                        
+                        len = 1;
+                        result = '';
+                    }
+
+                    lastNumber = parseInt(currentNumber);
+                }
+
+                //OUTPUT
+                jsConsole.writeLine(bestResult);
+            }
+        </script>
+    </body>
+</html>
