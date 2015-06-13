@@ -49,7 +49,6 @@ function solve(params) {
 
     return answer;
 }
-
 console.log(solve(
     ["5 1", "9 0 2 4 1"]
 ));
