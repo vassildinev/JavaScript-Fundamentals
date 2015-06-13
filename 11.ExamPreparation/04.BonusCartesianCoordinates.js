@@ -1,0 +1,1 @@
+function bonus(a,b){console.log(a*b>0?a>0?1:2:a>0?3:0)}

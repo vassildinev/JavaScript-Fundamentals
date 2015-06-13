@@ -1,0 +1,7 @@
+---TAGS---
+/<.+?>/g
+
+---INTEGER AND DECIMAL NUMBERS---
+/(?:\d*\.)?\d+/g
+
+---

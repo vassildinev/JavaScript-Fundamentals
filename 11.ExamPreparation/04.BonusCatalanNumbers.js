@@ -1,0 +1,1 @@
+function f(n){n|=0;return n<2?.5:(4*n-2)*f(n-1)/(n+1)}

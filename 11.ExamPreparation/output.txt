@@ -1,0 +1,3 @@
+[ '@section menu {\r\n<ul id="menu">\r\n        <li>Home</li>\r\n        <li>About us</li>\r\n</ul>\r\n',
+  '@section footer {\r\n<footer>\r\n    Copyright Telerik Academy 2014\r\n</footer>\r\n',
+  '' ]
